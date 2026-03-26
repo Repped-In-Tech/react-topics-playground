@@ -1,6 +1,6 @@
 # React Topics — Lesson Guide
 
-This project covers the core React concepts you'll use every day: **props**, **state**, **events**, **hooks**, and **routing**. Each lesson is a page in the app. Follow the order below.
+This project covers the core React concepts you'll use every day: **props**, **state**, **events**, **hooks**, and **routing**. Each lesson is a page in the app. Start the projet, then follow the order below.
 
 ---
 
