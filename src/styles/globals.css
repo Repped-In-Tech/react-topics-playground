@@ -54,8 +54,8 @@ body {
   min-height: 100vh;
   position: relative;
   background: var(--bg-page) !important;
+  color: var(--text-base);
 }
-
 .page {
   max-width: 980px;
   margin: 0 auto;
