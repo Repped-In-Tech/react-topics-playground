@@ -9,19 +9,19 @@ function Home() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/events">Events</Link>
+          <Link href="/props">Props</Link>
         </li>
         <li>
-          <Link href="/props">Props</Link>
+          <Link href="/events">Events</Link>
         </li>
         <li>
           <Link href="/hooks">Hooks</Link>
         </li>
         <li>
-          <Link href="/routes">Routes</Link>
+          <Link href="/forms">Forms</Link>
         </li>
         <li>
-          <Link href="/forms">Forms</Link>
+          <Link href="/routes">Routes</Link>
         </li>
       </ul>
     </>
