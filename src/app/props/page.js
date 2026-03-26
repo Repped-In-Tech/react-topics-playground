@@ -17,9 +17,9 @@ export default function Props() {
       <Loading />
 
       {/* The color prop is passed as a string. Loading uses it to style the spinner. */}
-      <Loading color="green" />
-      <Loading color="orange" />
-      <Loading color="purple" />
+      <Loading color="lime" />
+      <Loading color="cyan" />
+      <Loading color="pink" />
 
       {/* CHILDREN PROP:
           Anything between the opening and closing tag becomes the special "children" prop.

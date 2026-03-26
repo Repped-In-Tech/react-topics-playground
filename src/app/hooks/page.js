@@ -14,17 +14,17 @@ export default function Hooks() {
   //
   // The empty array [] is the dependency array.
   // [] = run this effect only once, when the component first mounts.
-  // If you added a variable here (e.g. [stateHook]), the effect would re-run whenever that value changes.
   useEffect(() => {
     const timer = setTimeout(() => {
       setStateHook('The useEffect Loaded Me!');
     }, 5000);
-
+    
     // The return function is the CLEANUP.
     // It runs when the component unmounts (is removed from the page).
     // Without this, the timeout could try to update state on an unmounted component — a memory leak.
     return () => clearTimeout(timer);
-  }, []);
+    // When you add a variable here (e.g. [stateHook]), the effect would re-run whenever that value changes.
+  }, [stateHook]);
 
   return <div>{stateHook}</div>;
 }

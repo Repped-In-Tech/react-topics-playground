@@ -9,13 +9,13 @@ import PropTypes from 'prop-types';
 //
 // Default values are set directly in the parameter list (e.g. color = 'red').
 // This replaces the old Loading.defaultProps pattern, which is deprecated in React 18+.
-export default function Loading({ color = 'red', children = 'nothing here' }) {
+export default function Loading({ color = 'gray', children = 'nothing here' }) {
   return (
     <div className="text-center mt-5">
       <Spinner
         animation="border"
         style={{
-          color, // the color prop controls the spinner color; defaults to 'red'
+          color, // the color prop controls the spinner color; defaults to 'gray'
           width: '100px',
           height: '100px',
         }}

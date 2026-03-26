@@ -8,7 +8,7 @@
 
   --fs-xs: 11px;
   --fs-sm: 13px;
-  --fs-base: 17px;
+  --fs-base: 1.25rem;
   --fs-md: 19px;
   --fs-lg: 22px;
   --fs-xl: 26px;
@@ -105,7 +105,7 @@ a {
 
 .ds-nav-link {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
