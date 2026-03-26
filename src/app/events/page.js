@@ -39,32 +39,66 @@ export default function Events() {
   };
 
   return (
-    <>
-      <h1>Events</h1>
-      {/* The || operator provides a fallback: if eventText is empty (''), show the default message */}
-      <h3 className="watch-event">{eventText || 'Welcome to events!'}</h3>
+    <section className="section-wrap">
+      <header>
+        <span className="section-label">React Lesson</span>
+        <h1 className="section-title">Events</h1>
+      </header>
 
-      <h4>Button</h4>
-      <button className="btn btn-success" type="button" onClick={handleClick}>
-        Click Event
-      </button>
-      <hr />
+      <div className="style-demo">
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-lg)', fontSize: 'var(--fs-md)' }}>
+          Events let you respond to user interactions like clicks, typing, and form submissions. React's synthetic events make event handling consistent across browsers.
+        </p>
 
-      <h4>Input</h4>
-      <input placeholder="Change Event" value={inputValue} onChange={handleChange} />
-      <hr />
+        <div className="card-ds" style={{ marginBottom: 'var(--space-lg)', padding: 'var(--space-lg)', minHeight: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <h3 className="watch-event" style={{ margin: 0, textAlign: 'center' }}>
+            {eventText || '👀 Watch for events to appear here...'}
+          </h3>
+        </div>
 
-      <h4>Form</h4>
-      <form onSubmit={handleSubmit}>
-        <button type="submit" className="btn btn-info">
-          Submit Event
+        <hr style={{ borderTop: '1px solid var(--border-subtle)', margin: 'var(--space-lg) 0' }} />
+
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--fs-lg)', fontWeight: 800, textTransform: 'uppercase', color: 'var(--white)', marginBottom: 'var(--space-md)' }}>Click Event</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-md)', fontSize: 'var(--fs-md)' }}>
+          Triggered when a button is clicked:
+        </p>
+        <button className="btn btn-lime" type="button" onClick={handleClick} style={{ marginBottom: 'var(--space-lg)' }}>
+          Click Event
         </button>
-      </form>
-      <hr />
 
-      <button type="button" className="btn btn-warning" onClick={handleReset}>
-        Reset
-      </button>
-    </>
+        <hr style={{ borderTop: '1px solid var(--border-subtle)', margin: 'var(--space-lg) 0' }} />
+
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--fs-lg)', fontWeight: 800, textTransform: 'uppercase', color: 'var(--white)', marginBottom: 'var(--space-md)' }}>Change Event</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-md)', fontSize: 'var(--fs-md)' }}>
+          Triggered on every keystroke in the input:
+        </p>
+        <input
+          className="form-input"
+          placeholder="Type something..."
+          value={inputValue}
+          onChange={handleChange}
+          style={{ marginBottom: 'var(--space-lg)' }}
+          aria-label="Change event input"
+        />
+
+        <hr style={{ borderTop: '1px solid var(--border-subtle)', margin: 'var(--space-lg) 0' }} />
+
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--fs-lg)', fontWeight: 800, textTransform: 'uppercase', color: 'var(--white)', marginBottom: 'var(--space-md)' }}>Submit Event</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-md)', fontSize: 'var(--fs-md)' }}>
+          Triggered when a form is submitted:
+        </p>
+        <form onSubmit={handleSubmit} style={{ marginBottom: 'var(--space-lg)' }}>
+          <button type="submit" className="btn btn-cyan">
+            Submit Event
+          </button>
+        </form>
+
+        <div className="button-group">
+          <button type="button" className="btn btn-pink" onClick={handleReset}>
+            Reset All
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }

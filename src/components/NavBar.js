@@ -6,8 +6,8 @@ export default function NavBar() {
   return (
     <nav className="ds-nav" role="navigation" aria-label="Main navigation">
       <div className="ds-nav-inner">
-        <Link href="/" className="ds-nav-logo">
-          React <span className="highlight">Topics</span>
+        <Link href="/" className="ds-nav-logo" title="REPPED IN - React Topics">
+          <span style={{ color: '#f5f1ff' }}>R</span><span style={{ color: '#ceff05' }}>I</span>
         </Link>
 
         <div className="ds-nav-links">

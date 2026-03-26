@@ -30,17 +30,17 @@ function Home() {
   ];
 
   return (
-    <section>
-      <header className="section-wrap">
-        <span className="section-label">Welcome</span>
+    <section className="section-wrap">
+      <header>
+        <span className="section-label">Welcome to REPPED</span>
         <h1 className="section-title">React Topics</h1>
       </header>
 
-      <div className="style-demo">
-        <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-          This sample app demonstrates reusable React patterns with a unified Repped design style across navigation, forms, and cards.
-        </p>
+      <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-lg)', fontSize: 'var(--fs-md)' }}>
+        This sample app demonstrates reusable React patterns with the <strong style={{ color: 'var(--lime)' }}>REPPED IN</strong> design system across navigation, forms, and components.
+      </p>
 
+      <div className="style-demo">
         <div style={{ overflowX: 'auto' }}>
           <table style={{
             width: '100%',

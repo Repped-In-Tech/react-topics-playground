@@ -1,0 +1,21 @@
+<svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+      .logo-r { fill: #f5f1ff; }
+      .logo-i { fill: #ceff05; }
+    </style>
+  </defs>
+
+  <!-- R in white -->
+  <text x="0" y="32" class="logo-text logo-r">R</text>
+
+  <!-- I in lime -->
+  <text x="28" y="32" class="logo-text logo-i">I</text>
+</svg>

@@ -7,24 +7,40 @@ import PropTypes from 'prop-types';
 // They are received as a single object. We destructure that object in the parameter list
 // so we can reference each prop by name instead of writing props.color, props.children.
 //
-// Default values are set directly in the parameter list (e.g. color = 'red').
+// Default values are set directly in the parameter list (e.g. color = 'cyan').
 // This replaces the old Loading.defaultProps pattern, which is deprecated in React 18+.
-export default function Loading({ color = 'gray', children = 'nothing here' }) {
+export default function Loading({ color = 'cyan', children = null }) {
+  // Map design system color names to hex values
+  const colorMap = {
+    cyan: '#67fcff',
+    lime: '#ceff05',
+    pink: '#ffcafd',
+    gray: '#b0b0b0',
+  };
+
+  const spinnerColor = colorMap[color] || color;
+
   return (
-    <div className="text-center mt-5">
+    <div style={{ textAlign: 'center' }}>
       <Spinner
         animation="border"
         style={{
-          color, // the color prop controls the spinner color; defaults to 'gray'
-          width: '100px',
-          height: '100px',
+          color: spinnerColor,
+          width: '80px',
+          height: '80px',
+          borderWidth: '4px',
         }}
+        role="status"
+        aria-label="Loading..."
       />
       {/* CHILDREN PROP:
           Anything placed between <Loading> and </Loading> in the parent becomes children.
-          If nothing is passed, the default value 'nothing here' renders instead.
-          Open props/page.js to see examples of both. */}
-      {children}
+          If nothing is passed, nothing renders. */}
+      {children && (
+        <div style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: 'var(--fs-sm)' }}>
+          {children}
+        </div>
+      )}
     </div>
   );
 }
@@ -32,7 +48,12 @@ export default function Loading({ color = 'gray', children = 'nothing here' }) {
 // PropTypes declare what data type each prop should be.
 // React will log a warning in the console if the wrong type is passed.
 Loading.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.oneOf(['cyan', 'lime', 'pink', 'gray']),
   // PropTypes.node covers anything React can render: strings, numbers, JSX, arrays, etc.
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+};
+
+Loading.defaultProps = {
+  color: 'cyan',
+  children: null,
 };

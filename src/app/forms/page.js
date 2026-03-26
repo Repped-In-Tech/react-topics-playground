@@ -28,19 +28,50 @@ export default function Forms() {
   };
 
   return (
-    <>
-      {/* Note: person.name is used as the key — works fine as long as names are unique */}
-      {names.map((person) => (
-        <NameCard key={person.name} person={person} setEditItem={setEditItem} />
-      ))}
+    <section className="section-wrap">
+      <header>
+        <span className="section-label">React Lesson</span>
+        <h1 className="section-title">Forms</h1>
+      </header>
 
-      {/*
-        Lifting state up: editItem and its setter live here (the parent) so both
-        NameCard and Form can share the same piece of state.
-        - NameCard sets editItem when Edit is clicked
-        - Form reads editItem to populate its fields and knows whether to add or update
-      */}
-      <Form obj={editItem} addPerson={addPerson} updatePerson={updatePerson} setEditItem={setEditItem} />
-    </>
+      <div className="style-demo">
+        <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--space-lg)', fontSize: 'var(--fs-md)' }}>
+          Forms combine <strong style={{ color: 'var(--cyan)' }}>state management</strong> with <strong style={{ color: 'var(--lime)' }}>event handlers</strong> to create interactive user experiences. Add, edit, and manage form data.
+        </p>
+
+        <hr style={{ borderTop: '1px solid var(--border-subtle)', margin: 'var(--space-lg) 0' }} />
+
+        {/*
+          Lifting state up: editItem and its setter live here (the parent) so both
+          NameCard and Form can share the same piece of state.
+          - NameCard sets editItem when Edit is clicked
+          - Form reads editItem to populate its fields and knows whether to add or update
+        */}
+        <Form obj={editItem} addPerson={addPerson} updatePerson={updatePerson} setEditItem={setEditItem} />
+
+        {names.length > 0 && (
+          <>
+            <hr style={{ borderTop: '1px solid var(--border-subtle)', margin: 'var(--space-lg) 0' }} />
+
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--fs-lg)', fontWeight: 800, textTransform: 'uppercase', color: 'var(--white)', marginBottom: 'var(--space-md)' }}>
+              {names.length} {names.length === 1 ? 'Person' : 'People'} Added
+            </h2>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: 'var(--space-lg)' }}>
+              {/* Note: person.name is used as the key — works fine as long as names are unique */}
+              {names.map((person) => (
+                <NameCard key={person.name} person={person} setEditItem={setEditItem} />
+              ))}
+            </div>
+          </>
+        )}
+
+        {names.length === 0 && (
+          <div style={{ textAlign: 'center', padding: 'var(--space-xl)', color: 'var(--text-muted)' }}>
+            <p style={{ fontSize: 'var(--fs-lg)' }}>No people added yet. Create one using the form above! 👆</p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

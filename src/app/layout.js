@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import NavBar from '../components/NavBar';
+import AccessibilityPanel from '../components/AccessibilityPanel';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-font-size="md" data-spacing="normal" data-contrast="standard" data-dyslexia="off" data-motion="full">
       <body>
         <NavBar />
         <main className="page">{children}</main>
+        <AccessibilityPanel />
       </body>
     </html>
   );
