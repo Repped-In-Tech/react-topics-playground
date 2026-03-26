@@ -36,7 +36,7 @@ html {
   margin: 0;
   padding: 0;
   background: var(--bg-page) !important;
-  color: var(--text-base);
+  color: var(--text-base) !important;
   font-family: var(--font-body);
   font-size: var(--fs-base);
   line-height: var(--lh-body);
