@@ -147,10 +147,13 @@ body {
 }
 
 .btn-lime { background: var(--lime); color: var(--navy); }
+.btn-lime:hover { color: var(--text-base); }
 .btn-cyan { background: var(--cyan); color: var(--navy); }
+.btn-cyan:hover { color: var(--text-base); }
 .btn-pink { background: var(--pink); color: var(--navy); }
+.btn-pink:hover { color: var(--text-base); }
 .btn-ghost { background: transparent; color: var(--text-base); border: 1.5px solid rgba(245,241,255,0.2); }
-.btn-ghost:hover:not(:disabled) { border-color: rgba(245,241,255,0.4); }
+.btn-ghost:hover:not(:disabled) { border-color: rgba(245,241,255,0.4); color: var(--text-base);}
 
 .field {
   margin-bottom: 1.5rem;
