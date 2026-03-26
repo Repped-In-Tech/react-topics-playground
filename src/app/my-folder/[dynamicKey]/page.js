@@ -10,5 +10,8 @@ export default function DynamicRoute({ params }) {
 }
 
 DynamicRoute.propTypes = {
-  params: PropTypes.string.isRequired,
+  // params is an object, not a string — it contains one key per dynamic segment in the URL
+  params: PropTypes.shape({
+    dynamicKey: PropTypes.string,
+  }).isRequired,
 }
