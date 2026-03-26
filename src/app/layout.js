@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar />
-        <div className="container">{children}</div>
+        <main className="page">{children}</main>
       </body>
     </html>
   );

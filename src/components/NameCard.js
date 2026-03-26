@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
 
 function NameCard({ person, setEditItem }) {
   return (
-    <Card className="my-2" body>
-      {person.name}: {person.phone}
-      <Button variant="info" onClick={() => setEditItem(person)}>Edit</Button>
-    </Card>
+    <article className="card-ds">
+      <div>
+        <strong>{person.name}</strong>: {person.phone}
+      </div>
+      <button
+        type="button"
+        className="btn btn-ghost"
+        onClick={() => setEditItem(person)}
+        style={{ marginTop: '0.75rem' }}
+      >
+        Edit
+      </button>
+    </article>
   );
 }
 

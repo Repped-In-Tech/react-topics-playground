@@ -60,43 +60,56 @@ function Form({ obj = initialState, addPerson, updatePerson, setEditItem }) {
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3 d-flex">
-            <label htmlFor="name" className="form-label visually-hidden">
+    <div className="style-demo" aria-live="polite">
+      <form onSubmit={handleSubmit}>
+        <div className="form-grid">
+          <div className="field">
+            <label htmlFor="name" className="field-label">
               Name
             </label>
             <input
-              className="form-control form-control-lg me-1"
+              className={`form-input ${obj.name && formInput.name === '' ? 'error' : ''}`}
               type="text"
               id="name"
               name="name"
               value={formInput.name}
               onChange={handleChange}
-              placeholder="ADD A NAME"
+              placeholder="Add a name"
               required
             />
-            <label htmlFor="phone" className="form-label visually-hidden">
+          </div>
+
+          <div className="field">
+            <label htmlFor="phone" className="field-label">
               Phone
             </label>
             <input
-              className="form-control form-control-lg me-1"
+              className="form-input"
               type="text"
               id="phone"
               name="phone"
               value={formInput.phone}
               onChange={handleChange}
-              placeholder="ADD A Phone"
+              placeholder="Add a phone"
               required
             />
-            {/* Button label changes based on mode: "Submit" for create, "Update" for edit */}
-            <button className="btn btn-success" type="submit">
+          </div>
+
+          <div className="field" style={{ alignSelf: 'end' }}>
+            <button className="btn btn-cyan" type="submit">
               {obj.name ? 'Update' : 'Submit'}
             </button>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={resetForm}
+              style={{ marginLeft: '0.75rem' }}
+            >
+              Reset
+            </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 }
